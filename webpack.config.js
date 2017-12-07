@@ -6,9 +6,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var postCssConfig = require('./postcss.config')
 
 const cwd = process.cwd()
-const stylePaths = [
-  path.join(cwd, 'src/styles')
-]
+const stylePaths = [path.join(cwd, 'src/styles')]
 
 const commonConfig = {
   resolve: {
@@ -19,21 +17,25 @@ const commonConfig = {
       {
         test: /\.js$/,
         loaders: ['babel-loader', 'eslint-loader'],
-        include: [
-          path.join(__dirname, 'src')
-        ]
+        include: [path.join(__dirname, 'src')]
       },
       {
         test: /\.woff?$/,
-        loaders: ['url-loader?prefix=font/&limit=10000&mimetype=application/font-woff']
+        loaders: [
+          'url-loader?prefix=font/&limit=10000&mimetype=application/font-woff'
+        ]
       },
       {
         test: /\.eot?$/,
-        loaders: ['url-loader?prefix=font/&limit=10000&mimetype=application/font-eot']
+        loaders: [
+          'url-loader?prefix=font/&limit=10000&mimetype=application/font-eot'
+        ]
       },
       {
         test: /\.ttf?$/,
-        loaders: ['url-loader?prefix=font/&limit=10000&mimetype=application/font-ttf']
+        loaders: [
+          'url-loader?prefix=font/&limit=10000&mimetype=application/font-ttf'
+        ]
       },
       {
         test: /\.jpg$/,
@@ -72,12 +74,6 @@ const commonConfig = {
       minify: false
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/index-alt.html'),
-      hash: false,
-      filename: 'index-alt.html',
-      minify: false
-    }),
-    new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/thankyou.html'),
       hash: false,
       filename: 'thankyou.html',
@@ -103,10 +99,7 @@ const developmentConfig = {
     loaders: [
       {
         test: /\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader'
-        ],
+        loaders: ['style-loader', 'css-loader'],
         include: stylePaths
       },
       {
@@ -136,7 +129,7 @@ const buildConfig = {
   plugins: [
     new ExtractTextPlugin({
       filename: '[name].[hash].css',
-      allChunks: true,
+      allChunks: true
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -165,7 +158,7 @@ const buildConfig = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader!postcss-loader!sass-loader',
+          use: 'css-loader!postcss-loader!sass-loader'
         }),
         include: stylePaths
       }
@@ -173,17 +166,11 @@ const buildConfig = {
   }
 }
 
-module.exports = function (env) {
+module.exports = function(env) {
   switch (env) {
     case 'production':
-      return merge(
-        commonConfig,
-        buildConfig
-      )
+      return merge(commonConfig, buildConfig)
     default:
-      return merge(
-        commonConfig,
-        developmentConfig
-      )
+      return merge(commonConfig, developmentConfig)
   }
 }
