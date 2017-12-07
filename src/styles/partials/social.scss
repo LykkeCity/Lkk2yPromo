@@ -1,0 +1,45 @@
+.social {
+  list-style: none;
+  font-size: 0;
+  margin-bottom: 0;
+  padding: 0;
+
+  li  {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+  }
+
+  a {
+    color: rgba(getColor(white), .8);
+    padding: 8px 7px;
+    display: block;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 7px;
+      right: 7px;
+      border-bottom: 2px solid transparent;
+      transition: border $transition;
+    }
+
+    &:hover {
+      color: getColor(white);
+
+      &:after {
+        border-bottom-color: getColor(pink);
+      }
+    }
+
+    i {
+      width: 30px;
+      height: 30px;
+      margin-right: 0;
+      line-height: 30px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+<section class="section section_form" id="form">
+  <div class="valign">
+    <div class="valign__row">
+      <div class="valign__cell">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-5 automargin">
+              <div class="section_tag">Be first</div>
+              <h2 class="section_title">Get on the whitelist</h2>
+
+              <form class="form" id="frmWhitelist">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input required type="text" name="first_name" id="first_name" class="form-control">
+                      <label for="first_name" class="control-label">First Name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input required type="text" name="last_name" id="last_name" class="form-control">
+                      <label for="last_name" class="control-label">Last Name</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <input required type="email" name="email" id="email" class="form-control">
+                  <label for="email" class="control-label">E-mail</label>
+                </div>
+
+                <div class="form-group">
+                  <select required name="country" id="country" class="form-control form-control--select">
+                  </select>
+                  <label for="country" class="control-label">Country</label>
+                  <i class="icon icon--arrow-down"></i>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input required type="number" name="amount" id="amount" min="0" step="1" class="form-control">
+                      <label for="amount" class="control-label ">Amount of LKK2Y</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <select required name="currency" id="currency" class="form-control form-control--focus form-control--select">
+                        <option value="USD" selected>USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="CHF">CHF</option>
+                        <option value="GBP">GBP</option>
+                        <option value="BTC">BTC</option>
+                        <option value="ETH">ETH</option>
+                      </select>
+                      <label for="currency" class="control-label">Currency</label>
+                      <i class="icon icon--arrow-down"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="submit-group">
+                  <div class="row">
+                    <div class="col-xs-5">
+                      <div class="total">
+                        <span>Indicative amount</span>
+                        <div class="total__value" id="totalAmount">0</div>
+                      </div>
+                    </div>
+                    <div class="col-xs-7">
+                      <input
+                        class="btn btn--bordered btn-lg btn-block"
+                        type="submit"
+                        id="btnWhitelist"
+                        value="Get on the whitelist" />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

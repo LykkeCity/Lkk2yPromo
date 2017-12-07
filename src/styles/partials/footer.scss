@@ -1,0 +1,90 @@
+.footer {
+  background-color: #0E0F2A;
+  padding: 85px 0;
+  z-index: 101;
+  position: relative;
+  
+  &__text {
+    font-size: 14px;
+    color: rgba(getColor(white), .6);
+    letter-spacing: 0;
+    margin-bottom: 55px;
+    line-height: 20px;
+
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__links {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: getFontWeight(bold);
+
+    a {
+      color: getColor(pink);
+      display: inline-block;
+      margin-left: 26px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__copy {
+    font-weight: getFontWeight(bold);
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+
+  .footer_logo {
+    margin-bottom: 40px;
+    display: inline-block;
+  }
+
+  @include break-max(xlarge) {
+    &__copy {
+      margin-bottom: 20px;
+    }
+
+    &__links {
+      text-align: left;
+      margin-bottom: 40px;
+
+      a {
+        margin-left: 0;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @include break-max(mobile-alt) {
+    .social {
+      width: 200px;
+    }
+  }
+
+  @include break-max(tablet) {
+    padding: 50px 0;
+  }
+}
+
+.apps {
+  margin-bottom: 30px;
+
+  .apps_apple,
+  .apps_google {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5px;
+    margin-bottom: 10px;
+  }
+}

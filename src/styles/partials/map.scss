@@ -1,0 +1,159 @@
+.map_legend {
+  position: absolute;
+  left: 100px;
+  bottom: -40px;
+  font-weight: getFontWeight(semibold);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 30px;
+
+  &__item {
+    position: relative;
+    padding-left: 30px;
+
+    &:before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      left: 0;
+      top: 9px;
+      transition: opacity .3s ease;
+      border: 2px solid getColor(pink);
+    }
+
+    &--green {
+      &:before {
+        content: '';
+        border-color: getColor(green);
+      }
+    }
+  }
+}
+
+.map_pin {
+  position: absolute;
+  pointer-events: all;
+  z-index: 10;
+  max-width: 130px;
+  white-space: nowrap;
+  padding-left: 16px;
+
+  &__title {
+    font-weight: getFontWeight(bold);
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 14px;
+    text-transform: uppercase;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    width: 2px;
+    top: 10px;
+    min-height: 80px;
+    background: -moz-linear-gradient(top, rgba(85,231,255,1) 0%, rgba(0,93,242,0.6) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(85,231,255,1) 0%,rgba(0,93,242,0.6) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(85,231,255,1) 0%,rgba(0,93,242,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55e7ff', endColorstr='#cc005df2',GradientType=0 ); /* IE6-9 */
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 100px;
+      border: 2px solid getColor(green);
+    }
+  }
+
+  &--right {
+    padding-left: 0;
+    padding-right: 16px;
+    text-align: right;
+
+    .map_pin__line {
+      right: 0;
+      left: auto;
+    }
+
+    .map_badge {
+      float: right;
+      margin: 8px 0 0 8px;
+    }
+  }
+}
+
+.map_badge {
+  border: 2px solid;
+  color: getColor(pink);
+  font-weight: getFontWeight(bold);
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 8px 8px 0 0;
+  padding: 3px 6px 2px;
+  float: left;
+  background: transparent;
+  border-radius: 0;
+  transition: all .3s ease;
+
+  pointer-events: none;
+
+  &:focus {
+    outline: none;
+  }
+
+/*  &:hover {
+    color: inherit;
+  }*/
+
+  &--green {
+    color: getColor(green);
+  }
+
+
+}
+
+.badges-hidden {
+  @include break-max(tablet) {
+    opacity: 1 !important;
+  }
+}
+
+.popover {
+  background-color: getColor(white);
+  position: absolute;
+  padding: 40px;
+  letter-spacing: 0;
+  color: #333333;
+  white-space: normal;
+  width: 420px;
+  z-index: 40;
+  margin: -20px;
+
+  .arrow {
+    display: none;
+  }
+
+  .popover-title {
+    font-size: 30px;
+    font-weight: getFontWeight(bold);
+    font-family: $font-stack;
+    line-height: 40px;
+    margin-bottom: 11px;
+    color: #111111;
+  }
+
+  .popover-content {
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 30px;
+  }
+}

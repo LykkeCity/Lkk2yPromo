@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Lykke 2-year Forward token sale: ERC20 based forward token</title>
+  <meta name="description" content="Lykke 2-Year Forward is an ERC20 based token standard that confers the right of the holder to receive the base value of the token, expressed in digitized Lykke shares, or Lykke coins (LKK).">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+
+  <title>2-years Lykke forward offering</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <meta property="og:title" content="Lykke 2-year Forward token sale: ERC20 based forward token" />
+  <meta property="og:description" content="Lykke 2-Year Forward is an ERC20 based token standard that confers the right of the holder to receive the base value of the token, expressed in digitized Lykke shares, or Lykke coins (LKK)." />
+  <meta property="og:image" content="https://lkk2y.lykke.com/facebook_banner_big.png" />
+  <meta property="og:image:secure_url" content="https://lkk2y.lykke.com/facebook_banner_big.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="314">
+  <meta property="og:site_name" content="https://lkk2y.lykke.com/" />
+
+  <meta name="twitter:card" content="card_type">
+  <meta name="twitter:site" content="https://lkk2y.lykke.com/">
+  <meta name="twitter:title" content="Lykke 2-year Forward token sale: ERC20 based forward token">
+  <meta name="twitter:description" content="Lykke 2-Year Forward is an ERC20 based token standard that confers the right of the holder to receive the base value of the token, expressed in digitized Lykke shares, or Lykke coins (LKK).">
+  <meta name="twitter:image:src" content="https://lkk2y.lykke.com/twitter.png">
+</head>
+
+<body class="page_inner">
+
+  <%= require('html-loader?attrs=false!./partials/header.html') %>
+
+    <%= require('html-loader?attrs=false!./partials/sections/thankyou.html') %>
+
+      <script type="text/javascript" src="https://offershub.ru/js/public/OHTracking.min.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const qs = new URL(location).searchParams;
+          if (qs.has('a')) {
+            const json = JSON.parse(atob(qs.get('a')));
+            window.OHTracking.lead(json)
+          }
+        })
+      </script>
+</body>
+
+</html>

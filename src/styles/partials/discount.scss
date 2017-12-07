@@ -1,0 +1,89 @@
+.discount {
+  padding: 20px 0;
+  margin-bottom: 60px;
+
+  @include break-max(medium) {
+    margin-bottom: 20px;
+  }
+}
+
+.discount_img {
+  transition: all .3s ease-in;
+  transform-origin: 100% 100%;
+  margin-bottom: 25px;
+
+  img {
+    width: 100%;
+  }
+
+  &.affix {
+    position: relative;
+    transform: rotateX(0deg);
+  }
+
+  &.affix-top {
+    transform: rotateX(90deg);
+  }
+
+  @include break-max(tablet) {
+    margin-bottom: 20px;
+    transform: rotateX(0deg) !important;
+  }
+}
+
+.discount_info {
+  overflow: hidden;
+}
+
+.discount_item {
+  float: left;
+  width: percentage(1/5);
+  text-align: center;
+  padding: 0 25px;
+
+  &__title {
+    font-family: $font-stack;
+    font-weight: getFontWeight(bold);
+    letter-spacing: -0.86px;
+    margin-bottom: 20px;
+    font-size: 26px;
+    line-height: 1.35;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  &__desc {
+    font-weight: getFontWeight(semibold);
+    font-size: 14px;
+    color: getColor(primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  @include break-max(tablet) {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &__desc {
+      font-size: 12px;
+    }
+  }
+
+  @include break-max(medium) {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+
+    &__title {
+      font-size: 14px;
+      line-height: normal;
+      margin-bottom: 0;
+    }
+    
+    &__desc {
+      overflow: hidden;
+      font-size: 14px;
+      padding-top: 6px;
+    }
+  }
+}

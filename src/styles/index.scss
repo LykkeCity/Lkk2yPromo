@@ -1,0 +1,102 @@
+@import './reset.css';
+@import 'vendor/bootstrap-custom.min.css';
+@import 'common/fonts';
+@import 'common/icons';
+@import 'common/vars';
+@import 'common/functions';
+@import 'common/mixins';
+@import 'common/typo';
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+html.skrollr.skrollr-mobile {
+  overflow: auto !important;
+}
+
+body {
+  height: 100%;
+  font: 400 getFontSize(regular) $font-default;
+  color: getColor(white);
+  background-color: getColor(bg);
+  overflow: auto !important;
+
+  -webkit-text-size-adjust: none;
+  font-size-adjust: none;
+
+  @include fontantialias(true);
+
+  @media all and (max-width: 991px), all and (max-height: 767px) {
+    height: auto;
+  }
+}
+
+.body_grid_bg {
+  background: url(/images/grid_small_bg.png) no-repeat center;
+  background-size: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+
+  @media (min-width: 1200px) {
+    width: 1390px;
+  }
+}
+
+@import 'partials/header';
+@import 'partials/sections';
+@import 'partials/animations';
+@import 'partials/modal';
+@import 'partials/social';
+@import 'partials/form';
+@import 'partials/list';
+@import 'partials/discount';
+@import 'partials/ecosystem';
+@import 'partials/map';
+@import 'partials/footer';
+
+.valign {
+  display: table;
+  height: 100%;
+  width: 100%;
+  table-layout: fixed;
+
+  &__row {
+    display: table-row;
+  }
+
+  &__cell {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.apps {
+  .apps_apple, .apps_google {
+    max-width: 46%;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
