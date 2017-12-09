@@ -186,7 +186,7 @@
 
   &--alt {
     .section_header {
-      margin-top: -240px;
+      margin-top: -180px;
     }
   }
 
@@ -200,13 +200,13 @@
 
     &--alt {
       .section_header {
-        margin-top: -240px;
+        margin-top: -180px;
       }
     }
   }
 
   @include break-max(large) {
-    min-height: 880px;
+    min-height: 740px;
 
     .section_content {
       bottom: 40px;
