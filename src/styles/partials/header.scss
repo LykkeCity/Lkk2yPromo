@@ -135,7 +135,7 @@
     position: static;
   }
 
-  @include break-max(medium) {
+  @include break-max(tablet) {
     margin: 0 auto;
   }
 }
