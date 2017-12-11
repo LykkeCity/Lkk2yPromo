@@ -77,6 +77,10 @@ function initializeClock (clock, endtime) {
 
     if (t.total <= 0) {
       clearInterval(timeinterval)
+      daysSpan.innerHTML = '0'
+      hoursSpan.innerHTML = '00'
+      minutesSpan.innerHTML = '00'
+      secondsSpan.innerHTML = '00'
     }
   }
 
@@ -86,7 +90,7 @@ function initializeClock (clock, endtime) {
 
 api.info().then(info => {
   const clock = document.querySelector('#countdown')
-  clock && initializeClock(clock, new Date(info.startDate * 1000))
+  clock && initializeClock(clock, new Date(Math.max(Date.now(), info.startDate * 1000)))
 
   const fundsReceived = document.querySelector('#fundsReceived')
   if (fundsReceived) {
